@@ -13,9 +13,15 @@ app.get("/", function (req, res) {
   res.send("Hello World");
 });
 
+//** routing **//
 app.get("/vegetables", function (req, res) {
   // send all the veggies
   res.send(vegetables.join(", "));
+});
+
+//** url parameters **//
+app.get("/hello/:name", function (req, res) {
+  res.send("Hello, " + req.params.name);
 });
 
 // start the server
