@@ -7,6 +7,14 @@ var express = require('express'),
           "Cucumber",
           "Peas"
            ];
+//** sending dynamic files **//
+app.set('view engine', 'ejs');
+
+app.get("/", function(req, res) {
+  //use res.render
+  res.render('index', {name: "Elie"});
+});
+
 // a "GET" request to "/" will run the function below
 app.get("/", function (req, res) {
   // send back the response: 'Hello World'
