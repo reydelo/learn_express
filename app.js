@@ -24,6 +24,12 @@ app.get("/hello/:name", function (req, res) {
   res.send("Hello, " + req.params.name);
 });
 
+//** query parameters **//
+app.get("/hi", function (req, res) {
+  var name = req.query.name;
+  res.send("Hello, " + name);
+});
+
 // start the server
 app.listen(3000, function () {
   console.log("Go to localhost:3000");
